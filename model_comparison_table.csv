@@ -1,0 +1,9 @@
+Model,Accuracy,AUC-ROC,F1-Score,AUC-PR,Brier↓
+Random Forest,90.16,0.9545,0.9,0.9324,0.0989
+Naive Bayes,86.89,0.9513,0.871,0.9226,0.0959
+Stacking + Calibrated (Ours),90.16,0.9491,0.8966,0.9278,0.0933
+Stacking (Rathish),90.16,0.9481,0.9,0.9187,0.0972
+XGBoost,88.52,0.9437,0.8852,0.9154,0.0965
+Logistic Regression,83.61,0.9405,0.8333,0.9207,0.1079
+KNN,75.41,0.8409,0.7541,0.8152,0.1705
+Decision Tree,78.69,0.7895,0.7797,0.8227,0.2131
