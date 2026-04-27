@@ -1,23 +1,13 @@
 """
-=============================================================================
-IMPROVED HEART DISEASE PREDICTION PIPELINE
-Extending Rathish et al. (2024) – Journal of Medical Systems
-Student: Aditya Kulkarni | Roll No: 1032232135
-MIT World Peace University – B.Tech Computer Engineering
-
 IMPROVEMENTS OVER BASE PAPER:
   1. SMOTE for class imbalance handling
   2. RFECV for optimal feature selection
   3. SHAP explainability (summary + waterfall plots)
   4. Probability calibration (Brier Score + Calibration Curve)
   5. Extended metrics: F1, Precision-Recall AUC, Brier Score
-=============================================================================
+
 """
 
-# ── 0. INSTALL DEPENDENCIES (run once in terminal if needed) ──────────────
-# pip install ucimlrepo imbalanced-learn shap scikit-learn matplotlib seaborn
-
-# ── 1. IMPORTS ────────────────────────────────────────────────────────────
 import warnings
 warnings.filterwarnings("ignore")
 import os
@@ -30,7 +20,7 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import seaborn as sns
 
-from ucimlrepo import fetch_ucirepo                          # loads Cleveland dataset
+from ucimlrepo import fetch_ucirepo                     
 
 from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_score
 from sklearn.preprocessing import MinMaxScaler
@@ -311,7 +301,6 @@ plt.savefig(f"{OUTPUT_DIR}/fig_shap_summary.png", dpi=150, bbox_inches="tight")
 plt.close()
 print("Saved: fig_shap_summary.png")
 
-# SHAP Beeswarm Plot (direction of influence)
 plt.figure()
 shap.summary_plot(shap_vals, X_test_sel, show=False)
 plt.title("Figure 3.2 – SHAP Beeswarm Plot (Feature Impact Direction)")
